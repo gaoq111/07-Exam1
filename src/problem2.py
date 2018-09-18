@@ -2,8 +2,8 @@
 Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and BERT.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -44,7 +44,30 @@ def problem2a_testing():
     print('---------------------------------------------------------')
     print('Testing the   sum_of_digits_of_sum_of_factors   function:')
     print('---------------------------------------------------------')
-
+    #Test 1
+    expected = 9
+    actual = sum_of_digits_of_sum_of_factors(10)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    #Test 2
+    expected = 6
+    actual = sum_of_digits_of_sum_of_factors(8)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    #Test 3
+    expected = 10
+    actual = sum_of_digits_of_sum_of_factors(12)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    #Test 4
+    expected = 7
+    actual = sum_of_digits_of_sum_of_factors(4)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 def sum_of_digits_of_sum_of_factors(n):
     """
@@ -318,7 +341,11 @@ def problem2b(a, b, x):
     # TODO (continued):       (i.e., call) the   number_of_factors   function
     #                         that is DEFINED ABOVE.
     ############################################################################
-
+    sum = 0
+    for k in range(b-a+1):
+        if number_of_factors(k+a) >= x:
+            sum = sum + k+a
+    return sum
 
 def run_test_problem2c():
     """ Tests the   problem2c   function. """
@@ -442,7 +469,7 @@ def problem1c(m):
     # TODO (continued)    You get   NO credit   if your solution is more
     # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
-
+    return (m+5)*9-problem2b(m+1,m+9,3)
 
 ################################################################################
 # Our tests use the following to print error messages in red.

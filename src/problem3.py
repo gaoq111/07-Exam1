@@ -2,8 +2,8 @@
 Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and BERT.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -102,6 +102,21 @@ def problem3(point, length, delta, window):
     # TODO (continued):         and colors per the specified pattern.
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
+    line1 = rg.Line(point,rg.Point(point.x,point.y+length))
+    line1.thickness = 3
+    line1.color = 'black'
+    line1.attach_to(window)
+    for k in range(length//delta+1):
+        line = rg.Line(rg.Point(point.x,point.y+k*delta),rg.Point(point.x+length+k*20,point.y+k*delta))
+        line.thickness = 3
+        if (k+1)%3 == 0:
+            line.color = 'spring green'
+        if (k+1)%3 == 1:
+            line.color = 'magenta'
+        if (k+1)%3 == 2:
+            line.color = 'cyan'
+        line.attach_to(window)
+    window.render()
 
 
 # ----------------------------------------------------------------------
